@@ -1,0 +1,11 @@
+<h1>作成したユーザ一覧のページ</h1>
+<%= attachment_image_tag current_user, :profile_image,size: "100x100" %>
+<p>名前</p>
+<p><%= current_user.name %></p>
+<p>自己紹介</p>
+<p><%= current_user.introduction %></p>
+<%= link_to 'プロフィール編集' ,edit_user_path(current_user.id) %>
+<h2>作成したユーザ</h2>
+<% @users.each do |user| %>
+  <p>No<%= user.name %></p>
+<% end %>

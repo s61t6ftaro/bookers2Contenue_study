@@ -1,0 +1,9 @@
+<h1><%= current_user.name %>のMYページ</h1>
+<%= attachment_image_tag @user, :profile_image,size: "100x100",fallback: "no_image.jpg" %>
+<p>名前</p>
+<p><%= @user.name %></p>
+<p>自己紹介</p>
+<p><%= @user.introduction %></p>
+<% if current_user.id == @user.id %>
+  <%= link_to 'プロフィール編集' ,edit_user_path(@user) %>
+<% end %>
