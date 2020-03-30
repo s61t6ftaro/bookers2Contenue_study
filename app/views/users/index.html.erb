@@ -6,6 +6,7 @@
 <p><%= current_user.introduction %></p>
 <%= link_to 'プロフィール編集' ,edit_user_path(current_user.id) %>
 <h2>作成したユーザ</h2>
-<% @users.each do |user| %>
-  <p>No<%= user.name %></p>
+<% @users.each do |users| %>
+  <p><%= users.name %></p>
+  <%= link_to 'show',user_path(users.id) %>
 <% end %>
