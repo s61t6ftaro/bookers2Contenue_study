@@ -7,3 +7,17 @@
 <% if current_user.id == @user.id %>
   <%= link_to 'プロフィール編集' ,edit_user_path(@user) %>
 <% end %>
+<%= form_for @booknew do |f| %>
+  <div class="field row">
+    <label for="book_title">Title</label>
+    <%= f.text_field :title,class:"col-xs-12 book_title" %>
+  </div>
+  <div class="field row">
+    <label for="book_opinion">Opinion</label>
+    <%= f.text_area :body,class:"col-xs-12 book_body" %><br />
+  </div>
+  <div class="actions row">
+    <%= f.submit 'Create Book',class:"btn btn-primary col-xs-12" %>
+  </div>
+<% end %>
+
