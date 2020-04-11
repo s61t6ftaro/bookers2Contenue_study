@@ -1,6 +1,15 @@
-    <%= @book.title %><br>
-    <%= @book.body %>
-    <hr>
+<%= attachment_image_tag @book.user, :profile_image,size: "100x100" %>
+<p>名前</p>
+<p><%= @book.user.name %></p>
+<p>自己紹介</p>
+<p><%= @book.user.introduction %></p>
+<%= link_to 'プロフィール編集' ,edit_user_path(current_user) %>
+<hr>
+<p><%= @book.title %></p>
+<p><%= @book.body %></p>
+<%= link_to "編集",edit_book_path %>
+<%= link_to "削除",destroy_book_path(@book.id),method: :delete %>
+<hr>
 <%= form_for @booknew do |f| %>
     <div class="field row">
       <label for="book_title">Title</label>

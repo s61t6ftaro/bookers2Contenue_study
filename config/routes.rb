@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'tops#index'
-  devise_for :users
   get 'tops' => 'tops#about'
+  devise_for :users
   resources :users,only:[:index, :show, :edit, :update]
-  resources :books,only:[:index, :show, :edit,:create]
+  resources :books,only:[:index, :show, :edit,:create,:update]
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 end

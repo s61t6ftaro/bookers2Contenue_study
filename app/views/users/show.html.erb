@@ -20,4 +20,13 @@
     <%= f.submit 'Create Book',class:"btn btn-primary col-xs-12" %>
   </div>
 <% end %>
+<h2>投稿データ</h2>
+<% @books.each do |book| %>
+  <%= attachment_image_tag book.user, :profile_image,size: "100x100" %><br>
+  <%= link_to book_path(book.id) do %>
+    <%= book.title %><br>
+  <% end %>
+  <%= book.body %><br>
+  <hr>
+<% end %>
 
